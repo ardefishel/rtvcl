@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const PRODUCTS = [
@@ -11,6 +12,7 @@ const PRODUCTS = [
       "A material manager for standup comedians. Organize premises, bits, and setlists. Track what works, refine what doesn't.",
     stack: ["Expo", "React Native", "WatermelonDB"],
     features: ["Material Organization", "Set List Builder", "Performance Tracking"],
+    link: "/laughtrack",
   },
   {
     id: "02",
@@ -335,62 +337,64 @@ export default function InvertedSwissBrutalist() {
           <div className="col-span-12 md:col-span-11 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {PRODUCTS.map((product, idx) => (
               <RevealSection key={product.id} delay={idx * 0.15}>
-                <div
-                  className={`border ${t.border} h-full flex flex-col transition-colors duration-500`}
-                >
+                <Link href={product.link || '#'}>
                   <div
-                    className={`flex items-center justify-between px-5 py-3 border-b ${t.border}`}
+                    className={`border ${t.border} h-full flex flex-col transition-colors duration-500`}
                   >
-                    <span
-                      className={`font-mono text-[10px] tracking-[0.3em] ${t.subtle} uppercase`}
-                    >
-                      {product.id}
-                    </span>
-                    <span
-                      className={`font-mono text-[9px] tracking-[0.2em] uppercase border ${t.border} px-2.5 py-1 ${t.muted}`}
-                    >
-                      {product.status}
-                    </span>
-                  </div>
-
-                  <div className="px-5 py-6 flex-1 flex flex-col">
-                    <h3
-                      className="font-sans font-black uppercase tracking-[-0.03em] leading-none mb-5"
-                      style={{ fontSize: "clamp(1.8rem, 3vw, 2.8rem)" }}
-                    >
-                      {product.name}
-                    </h3>
-                    <p className={`text-sm leading-relaxed ${t.body} mb-6 flex-1`}>
-                      {product.summary}
-                    </p>
-
                     <div
-                      className={`space-y-0 border-t ${t.border} pt-4`}
+                      className={`flex items-center justify-between px-5 py-3 border-b ${t.border}`}
                     >
-                      {product.features.map((f) => (
-                        <p
-                          key={f}
-                          className={`font-mono text-[10px] tracking-[0.15em] ${t.subtle} uppercase py-2 border-b ${t.borderFaint}`}
-                        >
-                          {f}
-                        </p>
-                      ))}
+                      <span
+                        className={`font-mono text-[10px] tracking-[0.3em] ${t.subtle} uppercase`}
+                      >
+                        {product.id}
+                      </span>
+                      <span
+                        className={`font-mono text-[9px] tracking-[0.2em] uppercase border ${t.border} px-2.5 py-1 ${t.muted}`}
+                      >
+                        {product.status}
+                      </span>
                     </div>
 
-                    {product.stack.length > 0 && (
-                      <div className="flex flex-wrap gap-2 mt-5">
-                        {product.stack.map((s) => (
-                          <span
-                            key={s}
-                            className={`font-mono text-[9px] uppercase tracking-[0.15em] ${t.stackBg} ${t.stackText} px-2 py-0.5 transition-colors duration-500`}
+                    <div className="px-5 py-6 flex-1 flex flex-col">
+                      <h3
+                        className="font-sans font-black uppercase tracking-[-0.03em] leading-none mb-5"
+                        style={{ fontSize: "clamp(1.8rem, 3vw, 2.8rem)" }}
+                      >
+                        {product.name}
+                      </h3>
+                      <p className={`text-sm leading-relaxed ${t.body} mb-6 flex-1`}>
+                        {product.summary}
+                      </p>
+
+                      <div
+                        className={`space-y-0 border-t ${t.border} pt-4`}
+                      >
+                        {product.features.map((f) => (
+                          <p
+                            key={f}
+                            className={`font-mono text-[10px] tracking-[0.15em] ${t.subtle} uppercase py-2 border-b ${t.borderFaint}`}
                           >
-                            {s}
-                          </span>
+                            {f}
+                          </p>
                         ))}
                       </div>
-                    )}
+
+                      {product.stack.length > 0 && (
+                        <div className="flex flex-wrap gap-2 mt-5">
+                          {product.stack.map((s) => (
+                            <span
+                              key={s}
+                              className={`font-mono text-[9px] uppercase tracking-[0.15em] ${t.stackBg} ${t.stackText} px-2 py-0.5 transition-colors duration-500`}
+                            >
+                              {s}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </div>
-                </div>
+                </Link>
               </RevealSection>
             ))}
           </div>
