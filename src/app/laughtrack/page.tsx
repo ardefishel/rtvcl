@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 export default function LandingPage() {
-    const { t, toggleLocale, locale } = useI18n()
+    const { t, setLocale, locale } = useI18n()
     const [email, setEmail] = useState('')
     const [submitted, setSubmitted] = useState(false)
 
@@ -40,14 +40,36 @@ export default function LandingPage() {
                     </div>
 
                     <div className="flex items-center gap-3">
-                        <button
-                            type="button"
-                            onClick={toggleLocale}
-                            className="px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-white/5"
-                            style={{ color: 'rgba(255,255,255,0.5)' }}
+                        <div
+                            className="relative flex items-center rounded-full p-0.5"
+                            style={{
+                                background: 'rgba(255,255,255,0.06)',
+                                border: '1px solid rgba(255,255,255,0.08)',
+                            }}
                         >
-                            {t.nav.switchLang}
-                        </button>
+                            <div
+                                className="absolute top-0.5 bottom-0.5 rounded-full transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]"
+                                style={{
+                                    width: 'calc(50% - 2px)',
+                                    left: locale === 'en' ? '2px' : 'calc(50%)',
+                                    background: 'rgba(255,255,255,0.1)',
+                                    boxShadow: '0 0 8px rgba(255,255,255,0.04)',
+                                }}
+                            />
+                            {(['en', 'id'] as const).map((lang) => (
+                                <button
+                                    key={lang}
+                                    type="button"
+                                    onClick={() => setLocale(lang)}
+                                    className="relative z-10 px-3 py-1 text-xs font-medium tracking-wide uppercase transition-colors duration-200"
+                                    style={{
+                                        color: locale === lang ? '#f5f5f5' : 'rgba(255,255,255,0.35)',
+                                    }}
+                                >
+                                    {lang === 'en' ? 'EN' : 'ID'}
+                                </button>
+                            ))}
+                        </div>
                         <a
                             href="#waitlist"
                             className="hidden sm:inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold text-white transition-all duration-200 hover:scale-105"

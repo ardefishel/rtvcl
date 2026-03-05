@@ -3,7 +3,6 @@ export type Locale = 'en' | 'id'
 export interface Translations {
     nav: {
         getApp: string
-        switchLang: string
     }
     hero: {
         badge: string
@@ -85,7 +84,6 @@ export const translations: Record<Locale, Translations> = {
     en: {
         nav: {
             getApp: 'Get Early Access',
-            switchLang: '🇮🇩 Bahasa',
         },
         hero: {
             badge: 'Coming Soon — iOS & Android',
@@ -355,7 +353,6 @@ export const translations: Record<Locale, Translations> = {
     id: {
         nav: {
             getApp: 'Daftar Sekarang',
-            switchLang: '🇬🇧 English',
         },
         hero: {
             badge: 'Segera Hadir — iOS & Android',
