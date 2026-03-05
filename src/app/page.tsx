@@ -91,75 +91,75 @@ export default function InvertedSwissBrutalist() {
 
   const t = dark
     ? {
-        bg: "bg-[#0a0a0a]",
-        text: "text-white",
-        selection: "selection:bg-white selection:text-black",
-        muted: "text-white/40",
-        faint: "text-white/20",
-        ghost: "text-white/15",
-        subtle: "text-white/25",
-        body: "text-white/45",
-        mid: "text-white/50",
-        bright: "text-white/60",
-        strong: "text-white/70",
-        border: "border-white/10",
-        borderMid: "border-white/15",
-        borderFaint: "border-white/5",
-        rule: "bg-white/20",
-        ruleThin: "bg-white/10",
-        dot: "bg-white",
-        tagBorder: "border-white/15",
-        tagText: "text-white/40",
-        tagHoverBg: "hover:bg-white",
-        tagHoverText: "hover:text-black",
-        stackBg: "bg-white",
-        stackText: "text-black",
-        specHeaderBg: "bg-white",
-        specHeaderText: "text-black",
-        specHeaderMuted: "text-black/30",
-        ctaBg: "bg-white",
-        ctaText: "text-black",
-        ctaHoverBg: "hover:bg-transparent",
-        ctaHoverText: "hover:text-white",
-        ctaBorder: "border-white",
-        linkHover: "hover:text-white",
-        grain: "grain grain-heavy",
-      }
+      bg: "bg-[#0a0a0a]",
+      text: "text-white",
+      selection: "selection:bg-white selection:text-black",
+      muted: "text-white/40",
+      faint: "text-white/20",
+      ghost: "text-white/15",
+      subtle: "text-white/25",
+      body: "text-white/45",
+      mid: "text-white/50",
+      bright: "text-white/60",
+      strong: "text-white/70",
+      border: "border-white/10",
+      borderMid: "border-white/15",
+      borderFaint: "border-white/5",
+      rule: "bg-white/20",
+      ruleThin: "bg-white/10",
+      dot: "bg-white",
+      tagBorder: "border-white/15",
+      tagText: "text-white/40",
+      tagHoverBg: "hover:bg-white",
+      tagHoverText: "hover:text-black",
+      stackBg: "bg-white",
+      stackText: "text-black",
+      specHeaderBg: "bg-white",
+      specHeaderText: "text-black",
+      specHeaderMuted: "text-black/30",
+      ctaBg: "bg-white",
+      ctaText: "text-black",
+      ctaHoverBg: "hover:bg-transparent",
+      ctaHoverText: "hover:text-white",
+      ctaBorder: "border-white",
+      linkHover: "hover:text-white",
+      grain: "grain grain-heavy",
+    }
     : {
-        bg: "bg-white",
-        text: "text-black",
-        selection: "selection:bg-black selection:text-white",
-        muted: "text-black/40",
-        faint: "text-black/20",
-        ghost: "text-black/15",
-        subtle: "text-black/25",
-        body: "text-black/50",
-        mid: "text-black/50",
-        bright: "text-black/60",
-        strong: "text-black/70",
-        border: "border-black/10",
-        borderMid: "border-black/15",
-        borderFaint: "border-black/5",
-        rule: "bg-black/20",
-        ruleThin: "bg-black/10",
-        dot: "bg-black",
-        tagBorder: "border-black/15",
-        tagText: "text-black/40",
-        tagHoverBg: "hover:bg-black",
-        tagHoverText: "hover:text-white",
-        stackBg: "bg-black",
-        stackText: "text-white",
-        specHeaderBg: "bg-black",
-        specHeaderText: "text-white",
-        specHeaderMuted: "text-white/30",
-        ctaBg: "bg-black",
-        ctaText: "text-white",
-        ctaHoverBg: "hover:bg-transparent",
-        ctaHoverText: "hover:text-black",
-        ctaBorder: "border-black",
-        linkHover: "hover:text-black",
-        grain: "grain",
-      };
+      bg: "bg-white",
+      text: "text-black",
+      selection: "selection:bg-black selection:text-white",
+      muted: "text-black/40",
+      faint: "text-black/20",
+      ghost: "text-black/15",
+      subtle: "text-black/25",
+      body: "text-black/50",
+      mid: "text-black/50",
+      bright: "text-black/60",
+      strong: "text-black/70",
+      border: "border-black/10",
+      borderMid: "border-black/15",
+      borderFaint: "border-black/5",
+      rule: "bg-black/20",
+      ruleThin: "bg-black/10",
+      dot: "bg-black",
+      tagBorder: "border-black/15",
+      tagText: "text-black/40",
+      tagHoverBg: "hover:bg-black",
+      tagHoverText: "hover:text-white",
+      stackBg: "bg-black",
+      stackText: "text-white",
+      specHeaderBg: "bg-black",
+      specHeaderText: "text-white",
+      specHeaderMuted: "text-white/30",
+      ctaBg: "bg-black",
+      ctaText: "text-white",
+      ctaHoverBg: "hover:bg-transparent",
+      ctaHoverText: "hover:text-black",
+      ctaBorder: "border-black",
+      linkHover: "hover:text-black",
+      grain: "grain",
+    };
 
   return (
     <main
@@ -478,11 +478,10 @@ export default function InvertedSwissBrutalist() {
                   {SPEC_ROWS.map(([label, value], idx) => (
                     <div
                       key={label}
-                      className={`grid grid-cols-5 gap-0 ${
-                        idx < SPEC_ROWS.length - 1
-                          ? `border-b ${t.borderFaint}`
-                          : ""
-                      }`}
+                      className={`grid grid-cols-5 gap-0 ${idx < SPEC_ROWS.length - 1
+                        ? `border-b ${t.borderFaint}`
+                        : ""
+                        }`}
                     >
                       <div
                         className={`col-span-2 px-5 py-3.5 font-mono text-[10px] tracking-[0.15em] uppercase ${t.subtle} border-r ${t.borderFaint}`}
@@ -603,7 +602,7 @@ export default function InvertedSwissBrutalist() {
             className={`col-span-12 md:col-span-3 flex md:justify-end gap-6 font-mono text-[10px] tracking-[0.2em] uppercase ${t.subtle}`}
           >
             <a
-              href="https://github.com/rtvcl"
+              href="https://github.com/ardefishel"
               target="_blank"
               rel="noopener noreferrer"
               className={`${t.linkHover} transition-colors`}
@@ -611,7 +610,7 @@ export default function InvertedSwissBrutalist() {
               GitHub
             </a>
             <a
-              href="https://x.com/rtvcl"
+              href="https://x.com/agungwpg"
               target="_blank"
               rel="noopener noreferrer"
               className={`${t.linkHover} transition-colors`}
